@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body data-ng-app="adminApp">
+    <div class="wrapper">
+        <div class="container">
+            <section>
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    </div>
+
+    @Scripts.Render("~/bundles/vendors")
+    <script src="@Url.Content("~/Scripts/spa/app.js")" type="text/javascript"></script>
+
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+            @RenderSection("customScript", required: false)
+    </script>
+</body>
+</html>

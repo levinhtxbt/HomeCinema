@@ -50,8 +50,8 @@
     <Reference Include="Autofac, Version=4.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.3.0\lib\net45\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
@@ -139,6 +139,66 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\spa\account\login.html" />
+    <Content Include="Scripts\spa\account\loginCtrl.js" />
+    <Content Include="Scripts\spa\account\register.html" />
+    <Content Include="Scripts\spa\account\registerCtrl.js" />
+    <Content Include="Scripts\spa\app.js" />
+    <Content Include="Scripts\spa\customers\customerEditCtrl.js" />
+    <Content Include="Scripts\spa\customers\customers.html" />
+    <Content Include="Scripts\spa\customers\customersCtrl.js" />
+    <Content Include="Scripts\spa\customers\customersRegCtrl.js" />
+    <Content Include="Scripts\spa\customers\editCustomerModal.html" />
+    <Content Include="Scripts\spa\customers\register.html" />
+    <Content Include="Scripts\spa\directives\componentRating.directive.js" />
+    <Content Include="Scripts\spa\home\index.html" />
+    <Content Include="Scripts\spa\home\indexCtrl.js" />
+    <Content Include="Scripts\spa\home\rootCtl.js" />
+    <Content Include="Scripts\spa\layout\customPager.directive.js" />
+    <Content Include="Scripts\spa\layout\page.html" />
+    <Content Include="Scripts\spa\layout\sideBar.directive.js" />
+    <Content Include="Scripts\spa\layout\sideBar.html" />
+    <Content Include="Scripts\spa\layout\topBar.directive.js" />
+    <Content Include="Scripts\spa\layout\topBar.html" />
+    <Content Include="Scripts\spa\modules\common.core.js" />
+    <Content Include="Scripts\spa\directives\availableMovie.directive.js" />
+    <Content Include="Scripts\spa\directives\availableMovie.html" />
+    <Content Include="Scripts\spa\movies\add.html" />
+    <Content Include="Scripts\spa\movies\edit.html" />
+    <Content Include="Scripts\spa\movies\movieAddCtrl.js" />
+    <Content Include="Scripts\spa\movies\movieEditCtrl.js" />
+    <Content Include="Scripts\spa\movies\movies.html" />
+    <Content Include="Scripts\spa\movies\moviesCtrl.js" />
+    <Content Include="Scripts\spa\rental\details.html" />
+    <Content Include="Scripts\spa\rental\movieDetailsCtrl.js" />
+    <Content Include="Scripts\spa\rental\rental.html" />
+    <Content Include="Scripts\spa\rental\rentalStatsCtrl.js" />
+    <Content Include="Scripts\spa\rental\rentMovieModal.html" />
+    <Content Include="Scripts\spa\rental\rentMovieCtrl.js" />
+    <Content Include="Scripts\spa\services\apiService.js" />
+    <Content Include="Scripts\spa\services\fileUploadService.js" />
+    <Content Include="Scripts\spa\services\membershipService.js" />
+    <Content Include="Scripts\spa\services\notificationService.js" />
+    <Content Include="Scripts\vendors\angucomplete-alt.min.js" />
+    <Content Include="Scripts\vendors\angular-base64.js" />
+    <Content Include="Scripts\vendors\angular-cookies.js" />
+    <Content Include="Scripts\vendors\angular-file-upload.js" />
+    <Content Include="Scripts\vendors\angular-route.js" />
+    <Content Include="Scripts\vendors\angular-validator.js" />
+    <Content Include="Scripts\vendors\angular.js" />
+    <Content Include="Scripts\vendors\bootstrap.js" />
+    <Content Include="Scripts\vendors\jquery.fancybox-media.js" />
+    <Content Include="Scripts\vendors\jquery.fancybox.js" />
+    <Content Include="Scripts\vendors\jquery.js" />
+    <Content Include="Scripts\vendors\jquery.raty.js" />
+    <Content Include="Scripts\vendors\loading-bar.js" />
+    <Content Include="Scripts\vendors\modernizr.js" />
+    <Content Include="Scripts\vendors\morris.js" />
+    <Content Include="Scripts\vendors\raphael.js" />
+    <Content Include="Scripts\vendors\respond.src.js" />
+    <Content Include="Scripts\vendors\toastr.js" />
+    <Content Include="Scripts\vendors\ui-bootstrap-tpls-0.13.1.js" />
+    <Content Include="Scripts\vendors\underscore.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,14 +207,51 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\GenresController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Controllers\StocksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\ApiControllerBaseExtended.cs" />
+    <Compile Include="Infrastructure\Core\DataRepositoryFactory.cs" />
+    <Compile Include="Infrastructure\Core\FileUploadResult.cs" />
+    <Compile Include="Infrastructure\Core\MimeMultipart.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
+    <Compile Include="Infrastructure\Core\UploadMultipartFormProvider.cs" />
+    <Compile Include="Infrastructure\Extensions\EntitiesExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\RepositoryExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\RequestMessageExtensions.cs" />
+    <Compile Include="Infrastructure\Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Infrastructure\MessageHandlers\HomeCinemaAuthHandler.cs" />
+    <Compile Include="Infrastructure\ServiceException.cs" />
+    <Compile Include="Infrastructure\Validators\AccountViewModelValidators.cs" />
+    <Compile Include="Infrastructure\Validators\CustomerViewModelValidator.cs" />
+    <Compile Include="Infrastructure\Validators\MovieViewModelValidator.cs" />
+    <Compile Include="Infrastructure\Validators\StockViewModelValidator.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
+    <Compile Include="Models\GenreViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\MovieViewModel.cs" />
+    <Compile Include="Models\RegistrationViewModel.cs" />
+    <Compile Include="Models\RentalHistoryViewModel.cs" />
+    <Compile Include="Models\RentalViewModel.cs" />
+    <Compile Include="Models\StockViewModel.cs" />
+    <Compile Include="Models\TotalRentalHistoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="bower.json" />
+    <Content Include=".bowerrc" />
+    <Content Include="Scripts\spa\modules\common.ui.js" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -164,13 +261,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Content\css\" />
+    <Folder Include="Content\fonts\" />
+    <Folder Include="Content\images\movies\" />
+    <Folder Include="Content\images\raty\" />
+    <Folder Include="HomeCinema\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HomeCinema.Data\HomeCinema.Data.csproj">
       <Project>{3928EEE0-3088-4E56-A4B7-D1F8FE2E826D}</Project>
       <Name>HomeCinema.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HomeCinema.Entities\HomeCinema.Entities.csproj">
+      <Project>{51BB0E80-5C64-4E1C-B363-7726D28E43AB}</Project>
+      <Name>HomeCinema.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\HomeCinema.Services\HomeCinema.Services.csproj">
       <Project>{2D872391-E29F-4C4B-BD1A-C4D3CD8D5B5B}</Project>
